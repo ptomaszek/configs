@@ -1,0 +1,19 @@
+[user]
+	name = TBD
+	email = TBD
+[color]
+	ui = true
+[alias]
+	ci = commit
+	co = checkout
+	st = status
+	br = branch	
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lgn = log --name-only
+	pom = pull origin master
+	pod = pull origin develop
+	podr = pull origin develop --rebase
+
+	;shows/removes local branches that are merged into origin/develop (excluding master, develop and the one you're on right now)
+	show-merged-branches = !"sh -c \"git branch --merged origin/develop | grep -v -E '\\*|develop|master' \""
+	delete-merged-branches = !"sh -c \"git branch --merged origin/develop | grep -v -E '\\*|develop|master' | xargs -n 1 git branch -d \""
